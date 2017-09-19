@@ -25,25 +25,50 @@ public class RockPaperScissorsTest {
 
         String result = rpsGame.compareStrings("Rock", "Scissors");
 
-        assertEquals("Rock wins!", result);
+        assertEquals("You win! Play again?", result);
     }
 
     @Test
-    public void computerRockBeatsScissors() {
+    public void paperBeatsRock() {
         RockPaperScissors rpsGame = new RockPaperScissors();
 
-        String result = rpsGame.compareStrings("", "Rock");
+        String result = rpsGame.compareStrings("Paper", "Rock");
 
-        assertEquals("Rock wins!", result);
+        assertEquals("You win! Play again?", result);
     }
 
     @Test
-    public void scissorsBeatPaper() {
+    public void scissorsBeatsPaper() {
         RockPaperScissors rpsGame = new RockPaperScissors();
 
         String result = rpsGame.compareStrings("Scissors", "Paper");
 
-        assertEquals("Scissors wins!", result);
+        assertEquals("You win! Play again?", result);
     }
 
+    public void scissorsBeatsRock() {
+        RockPaperScissors rpsGame = new RockPaperScissors();
+
+        String result = rpsGame.compareStrings( "Scissors", "Rock");
+
+        assertEquals("Too bad, play again?", result);
+    }
+
+    @Test
+    public void rockBeatsPaper() {
+        RockPaperScissors rpsGame = new RockPaperScissors();
+
+        String result = rpsGame.compareStrings("Rock" , "Paper");
+
+        assertEquals("Too bad, play again?", result);
+    }
+
+    @Test
+    public void paperBeatsScissors() {
+        RockPaperScissors rpsGame = new RockPaperScissors();
+
+        String result = rpsGame.compareStrings( "Paper", "Scissors");
+
+        assertEquals("Too bad, play again?", result);
+    }
 }
